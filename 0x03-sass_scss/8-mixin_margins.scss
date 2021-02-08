@@ -1,0 +1,14 @@
+/* My style */
+@mixin Mixmargin ($size: 10px){
+	margin: {
+		left: $size;
+		right: $size;
+	}
+}
+body {
+	@include Mixmargin();
+}
+
+div {
+	@include Mixmargin(15px);
+}
