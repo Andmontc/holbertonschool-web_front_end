@@ -1,0 +1,6 @@
+/* My style */
+@for $size from 1 to 6 {
+	h#{$size} {
+		font-size: #{$size}px;
+	}
+}
