@@ -1,5 +1,5 @@
 /* My style */
-@for $size from 1 to 4 {
+@for $size from 1 through 4 {
 	.col-#{$size} {
 		width: (100%/$size);
 	}
