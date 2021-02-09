@@ -1,0 +1,34 @@
+/* My style */
+@import '103-sort_list.scss';
+
+/// Quick sort
+/// @author Hugo Giraudel
+/// @param {List} $list - list to sort
+/// @param {List} $order [$default-order] - order to use for sorting
+/// @return {List}
+/// @require {function} _str-compare
+/// @require $default-order
+@function quick-sort($list, $order: $default-order) {
+	$less:  ();
+	$equal: ();
+	$large: ();
+  
+	@if length($list) > 1 {
+	  $seed: nth($list, ceil(length($list) / 2));
+  
+	  @each $item in $list {
+		@if $item == $seed {
+		  $equal: append($equal, $item, list-separator($list));
+		} @else if _str-compare($item, $seed, $order) {
+		  $less: append($less, $item, list-separator($list));
+		} @else if not _str-compare($item, $seed, $order) {
+		  $large: append($large, $item, list-separator($list));
+		}
+	  }
+  
+	  @return join(join(quick-sort($less, $order), $equal), quick-sort($large, $order));
+	}
+  
+	@return $list;
+  }
+  
