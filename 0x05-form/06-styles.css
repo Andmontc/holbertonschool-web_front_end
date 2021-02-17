@@ -17,15 +17,19 @@
 /* Variables
    ============================= */
 
-   :root {
+  :root {
     --color-primary: #D73953;
     --color-black:  #090909;
     --color-white: #ffffff;
     --color-grey: #a0a0a0;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
+    --color-red: #cd3e65;
+    --color-green: #08805b;
   
     --text-color: var(--color-black);
+    --valid-color: var(--color-green);
+    --error-color: var(--color-red);
   
     --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
